@@ -1,0 +1,3 @@
+ignore:
+  - "src/setupTests.js"     # ignore configuration files
+  - "src/tempPolyfills.js"  # regexp accepted

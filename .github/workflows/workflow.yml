@@ -24,3 +24,10 @@ jobs:
         yarn build --if-present
       env:
         CI: true
+    - name: Upload coverage to Codecov  
+      uses: codecov/codecov-action@v1.0.2
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
+        file: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella 
