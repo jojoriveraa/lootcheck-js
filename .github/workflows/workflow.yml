@@ -24,3 +24,5 @@ jobs:
         yarn build --if-present
       env:
         CI: true
+    - name: codecov report
+      run: yarn codecov
