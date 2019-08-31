@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: yarn install, test and build
       run: |
-        yarn install
+        npm ci
         yarn test -u --all --coverage --ci
         yarn build --if-present
       env:
