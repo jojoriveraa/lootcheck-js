@@ -2,6 +2,7 @@
 
 
 [![codecov](https://codecov.io/gh/jojoriveraa/lootcheck-js/branch/master/graph/badge.svg)](https://codecov.io/gh/jojoriveraa/lootcheck-js)
+[![DepShield Badge](https://depshield.sonatype.org/badges/jojoriveraa/lootcheck-js/depshield.svg)](https://depshield.github.io)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
