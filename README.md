@@ -1,7 +1,9 @@
 # lootcheck-js
 
-
+[![Actions Status](https://github.com/jojoriveraa/lootcheck-js/workflows/Lootcheck%20CI/badge.svg)](https://github.com/jojoriveraa/lootcheck-js/actions)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=jojoriveraa_lootcheck-js&metric=alert_status)](https://sonarcloud.io/dashboard?id=jojoriveraa_lootcheck-js)
 [![codecov](https://codecov.io/gh/jojoriveraa/lootcheck-js/branch/master/graph/badge.svg)](https://codecov.io/gh/jojoriveraa/lootcheck-js)
+[![DepShield Badge](https://depshield.sonatype.org/badges/jojoriveraa/lootcheck-js/depshield.svg)](https://depshield.github.io)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
