@@ -1,4 +1,4 @@
-name: Lootcheck CI
+name: Push to Lootcheck [CI]
 
 on: [push]
 
@@ -31,10 +31,3 @@ jobs:
         file: ./coverage/lcov.info
         flags: unittests
         name: codecov-umbrella 
-    - name: deploy to ghpages
-      uses: peaceiris/actions-gh-pages@v1.1.0
-      if: success()
-      env:
-        GITHUB_TOKEN: ${{ secrets.LOOTCHECK_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./public
