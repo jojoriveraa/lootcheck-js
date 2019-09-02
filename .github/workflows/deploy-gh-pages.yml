@@ -3,10 +3,8 @@ name: Build page and deploy [to gh-pages]
 on: [page_build]
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x]
