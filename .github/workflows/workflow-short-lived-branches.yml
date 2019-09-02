@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -21,7 +21,7 @@ jobs:
         yarn test -u --all --coverage --ci
       env:
         CI: true
-    - name: Upload coverage to Codecov  
+    - name: upload coverage to Codecov  
       uses: codecov/codecov-action@v1.0.2
       with:
         token: ${{secrets.CODECOV_TOKEN}}
