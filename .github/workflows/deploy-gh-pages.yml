@@ -1,4 +1,4 @@
-name: Deploy to gh-pages
+name: Build page and deploy [to gh-pages]
 
 on: [page_build]
 
