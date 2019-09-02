@@ -1,12 +1,9 @@
-name: Push to Lootcheck [CI]
+name: Lootcheck short-lived branches [CI]
 
-on:
-  push:
-    branches:
-    - master
+on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -18,14 +15,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: yarn install, test and build
+    - name: yarn install and test
       run: |
         yarn install
         yarn test -u --all --coverage --ci
-        yarn build --if-present
       env:
         CI: true
-    - name: Upload coverage to Codecov  
+    - name: upload coverage to Codecov  
       uses: codecov/codecov-action@v1.0.2
       with:
         token: ${{secrets.CODECOV_TOKEN}}
