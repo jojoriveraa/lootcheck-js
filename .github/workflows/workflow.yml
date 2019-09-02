@@ -1,4 +1,4 @@
-name: Push to Lootcheck [CI]
+name: Deploy site to gh-pages
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: yarn install, test and build
+    - name: yarn install and build
       run: |
         yarn install
         yarn test -u --all --coverage --ci
@@ -32,3 +32,10 @@ jobs:
         file: ./coverage/lcov.info
         flags: unittests
         name: codecov-umbrella 
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v1.1.0
+      if: success()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
