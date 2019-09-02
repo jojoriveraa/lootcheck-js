@@ -1,4 +1,4 @@
-name: Lootcheck short-lived branches CI
+name: Lootcheck short-lived branches [CI]
 
 on: [push]
 
