@@ -1,3 +1,8 @@
+coverage:
+  round: down
+  precision: 2
+  
 ignore:
+  - "src/index.js"          # React well tested behavior
   - "src/setupTests.js"     # ignore configuration files
   - "src/tempPolyfills.js"  # regexp accepted
