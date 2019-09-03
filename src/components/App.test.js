@@ -9,6 +9,6 @@ describe('App', () => {
   });
 
   it('contains a connected Wallet component', () => {
-    expect(app.find('Wallet').exists()).toBe(true);
+    expect(app.find('Connect(Wallet)').exists()).toBe(true);
   });
 });
