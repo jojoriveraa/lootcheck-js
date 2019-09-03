@@ -7,4 +7,8 @@ describe('App', () => {
   it('renders properly', () => {
     expect(app).toMatchSnapshot();
   });
+
+  it('contains a Wallet component', () => {
+    expect(app.find('Wallet').exists()).toBe(true);
+  });
 });
