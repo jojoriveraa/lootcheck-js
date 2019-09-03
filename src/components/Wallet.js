@@ -13,7 +13,7 @@ export class Wallet extends Component {
 
 export default connect(
   state => {
-    balance: state;
+    return { balance: state };
   },
   null
 )(Wallet);
