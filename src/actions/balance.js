@@ -7,16 +7,16 @@ export const setBalance = balance => {
   };
 };
 
-export const withdraw = withdraw => {
+export const withdraw = amount => {
   return {
     type: constants.WITHDRAW,
-    withdraw
+    withdraw: amount
   };
 };
 
-export const deposit = deposit => {
+export const deposit = amount => {
   return {
     type: constants.DEPOSIT,
-    deposit
+    deposit: amount
   };
 };
