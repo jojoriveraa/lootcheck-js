@@ -15,4 +15,8 @@ describe('Wallet', () => {
       `Wallet Balance: ${balance}`
     );
   });
+
+  it('creates an input to deposit or withdraw from the balance', () => {
+    expect(wallet.find('.input-wallet').exists()).toBe(true);
+  });
 });
