@@ -6,6 +6,8 @@ export class Wallet extends Component {
     return (
       <div>
         <h3 className="balance">Wallet Balance: {this.props.balance}</h3>
+        <br />
+        <input className="input-wallet"></input>
       </div>
     );
   }
