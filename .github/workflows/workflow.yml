@@ -3,7 +3,8 @@ name: Deploy site to gh-pages
 on:
   push:
     branches:
-    - master
+      - master
+      - config-gh-pages
 
 jobs:
   build:
@@ -13,21 +14,12 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: yarn install and build
-      run: |
-        yarn install
-        yarn build
-      env:
-        CI: true
-    - name: deploy
-      uses: peaceiris/actions-gh-pages@v1.1.0
-      if: success()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: build
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: yarn install and build
+        run: |
+          yarn install
+          yarn deploy
