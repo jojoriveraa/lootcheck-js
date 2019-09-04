@@ -22,6 +22,6 @@ jobs:
     - name: yarn install and test
       run: |
         yarn install
-        yarn deploy --user "jojoriveraa <jariverai@gmail.com>"
+        yarn deploy
       env:
         CI: true
