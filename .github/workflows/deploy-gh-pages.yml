@@ -22,7 +22,7 @@ jobs:
       - name: yarn install and build
         run: |
           yarn install
-          yarn run deploy
+          yarn run build
         env:
           CI: true
       - name: deploy
