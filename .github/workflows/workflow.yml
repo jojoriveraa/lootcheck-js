@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - jojoriveraa-patch-1
 
 jobs:
   build:
@@ -25,9 +26,7 @@ jobs:
       env:
         CI: true
     - name: deploy
-      uses: peaceiris/actions-gh-pages@v1.1.0
-      if: success()
+      uses: nchaulet/github-action-gh-pages@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: build
+        GITHUB_TOKEN: ${{ secrets.LOOTCHECK_TOKEN }}
+        PUBLIC_PATH: build
