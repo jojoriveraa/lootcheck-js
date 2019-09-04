@@ -36,6 +36,5 @@ export default connect(
   state => {
     return { balance: state };
   },
-  { deposit },
-  { withdraw }
+  { deposit, withdraw }
 )(Wallet);
