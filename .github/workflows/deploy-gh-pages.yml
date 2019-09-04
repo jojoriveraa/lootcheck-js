@@ -14,14 +14,16 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: yarn install and test
-      run: |
-        yarn install
-        yarn deploy
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: git config
+        run: |
+          git config --global user.email "jariverai@gmail.com"
+          git config --global user.name "Jorge Rivera"
+      - name: yarn install and test
+        run: |
+          yarn install
+          yarn deploy
