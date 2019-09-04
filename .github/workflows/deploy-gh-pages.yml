@@ -7,24 +7,21 @@ on:
       - config-gh-pages
 
 jobs:
-  build:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [10.x, 12.x]
 
     steps:
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.LOOTCHECK_TOKEN }}
-          BRANCH: gh-pages
-          BASE_BRANCH: master
-          FOLDER: build
-          BUILD_SCRIPT: yarn install && yarn run build
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: yarn install and test
+      run: |
+        yarn install
+        yarn deploy
+      env:
+        CI: true
