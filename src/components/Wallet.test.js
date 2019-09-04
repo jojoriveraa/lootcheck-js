@@ -38,6 +38,7 @@ describe('Wallet', () => {
       beforeEach(() => {
         wallet.find('.btn-deposit').simulate('click');
       });
+
       it('it dispatches the `deposit()` it recieves with the local balance', () => {
         expect(mockDeposit).toHaveBeenCalledWith(parseInt(userBalance));
       });
