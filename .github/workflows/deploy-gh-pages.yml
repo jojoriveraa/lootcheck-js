@@ -25,5 +25,6 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.LOOTCHECK_TOKEN }}
           BRANCH: gh-pages
+          BASE_BRANCH: master
           FOLDER: build
           BUILD_SCRIPT: yarn install && yarn run build
