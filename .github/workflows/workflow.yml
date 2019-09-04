@@ -22,7 +22,7 @@ jobs:
     - name: yarn install and build
       run: |
         yarn install
-        yarn build --if-present
+        yarn build
       env:
         CI: true
     - name: deploy
@@ -31,4 +31,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./build
+        PUBLISH_DIR: build
