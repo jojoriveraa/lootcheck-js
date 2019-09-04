@@ -6,7 +6,7 @@ describe('Wallet', () => {
   const mockDeposit = jest.fn();
   const mockWithdraw = jest.fn();
   const balance = 20;
-  const props = { balance, deposit: mockDeposit };
+  const props = { balance, deposit: mockDeposit, withdraw: mockWithdraw };
   const wallet = shallow(<Wallet {...props} />);
   it('renders properly', () => {
     expect(wallet).toMatchSnapshot();
