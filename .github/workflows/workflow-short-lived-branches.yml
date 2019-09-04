@@ -26,5 +26,5 @@ jobs:
       with:
         token: ${{secrets.CODECOV_TOKEN}}
         file: ./coverage/lcov.info
-        flags: unit-tests
+        flags: unittests
         name: codecov-umbrella 
